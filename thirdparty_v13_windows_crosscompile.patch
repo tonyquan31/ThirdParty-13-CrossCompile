@@ -1,0 +1,276 @@
+diff --git a/Allwmake b/Allwmake
+index 9bb91698..b3f682fe 100755
+--- a/Allwmake
++++ b/Allwmake
+@@ -58,6 +58,22 @@ echo Start ThirdParty Allwmake
+ echo ========================================
+ echo
+ 
++if [ "$WM_COMPILER" = "Mingw" ]; then
++    echo "======================================================================"
++    echo "  MinGW Windows Cross-Compilation Mode detected"
++    echo "======================================================================"
++    if [ -f "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh" ]; then
++        "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh"
++    fi
++    if [ -f "$WM_THIRD_PARTY_DIR/makeZoltan_mingw.sh" ]; then
++        "$WM_THIRD_PARTY_DIR/makeZoltan_mingw.sh"
++    fi
++    echo "======================================================================"
++    echo "  Done ThirdParty Windows Cross-Compilation Allwmake"
++    echo "======================================================================"
++    exit 0
++fi
++
+ #------------------------------------------------------------------------------
+ 
+ echo ========================================
+@@ -201,6 +217,15 @@ checkSystemLibrary()
+ 
+ # Scotch
+ 
++if [ "$WM_COMPILER" = "Mingw" ]; then
++    echo "========================================"
++    echo "MinGW Cross-compilation for Scotch"
++    echo "========================================"
++    if [ -f "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh" ]; then
++        "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh"
++    fi
++fi
++
+ # Scotch Makefile. Currently this is GCC specific.
+ scotchMakefile=../../etc/wmakeFiles/scotch/Makefile.inc.i686_pc_linux2.shlib-OpenFOAM
+ 
+diff --git a/etc/wmakeFiles/scotch/Makefile.inc.mingw b/etc/wmakeFiles/scotch/Makefile.inc.mingw
+new file mode 100644
+index 00000000..f8ce3b83
+--- /dev/null
++++ b/etc/wmakeFiles/scotch/Makefile.inc.mingw
+@@ -0,0 +1,25 @@
++EXE         =
++LIB         = .dll
++OBJ         = .o
++
++MAKE        = make
++AR          = x86_64-w64-mingw32-gcc
++ARFLAGS     = -shared -Wl,--output-def,libscotch.def,--out-implib,libscotch.dll.a -o
++CAT         = cat
++CCS         = x86_64-w64-mingw32-gcc
++CCP         = x86_64-w64-mingw32-gcc
++CCD         = gcc
++CFLAGS      = -O3 -fPIC -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -Drestrict=__restrict -DCOMMON_OS_WINDOWS -DCOMMON_STUB_FORK -DIDXSIZE32 -DINTSIZE32
++CCDFLAGS    = -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -Drestrict=__restrict -DIDXSIZE32 -DINTSIZE32
++
++CLIBFLAGS   = -shared
++LDFLAGS     = -lz -lm
++CP          = cp
++FLEX        = flex
++BISON       = bison
++LEX         = flex
++YACC        = bison
++LN          = ln
++MKDIR       = mkdir -p
++MV          = mv
++RANLIB      = echo
+diff --git a/makeScotch_mingw.sh b/makeScotch_mingw.sh
+new file mode 100755
+index 00000000..bdd004c9
+--- /dev/null
++++ b/makeScotch_mingw.sh
+@@ -0,0 +1,102 @@
++#!/bin/bash
++set -e
++
++# ==============================================================================
++# Cross-Compilation Script for Scotch 7.0.8 (Target: Windows x64 via MinGW)
++# ==============================================================================
++
++SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
++cd "$SCRIPT_DIR"
++
++if [ -z "$WM_PROJECT_DIR" ] || [ "$WM_COMPILER" != "Mingw" ]; then
++    echo "[+] Sourcing OpenFOAM MinGW environment..."
++    OF_DIR="$(cd "$SCRIPT_DIR/../OpenFOAM-13" 2>/dev/null && pwd)"
++    if [ ! -f "$OF_DIR/etc/bashrc" ]; then
++        OF_DIR="/home/kodama/OpenFOAM-v13/OpenFOAM-13"
++    fi
++    cd "$OF_DIR"
++    export WM_COMPILER=Mingw
++    export WM_ARCH=linux64
++    export WM_MPLIB=MSMPI
++    export WM_OSTYPE=MSwindows
++    source etc/bashrc
++    cd "$SCRIPT_DIR"
++fi
++
++SCOTCH_VER="7.0.8"
++SCOTCH_DIR="$SCRIPT_DIR/scotch_$SCOTCH_VER"
++PLATFORM_DIR="$SCRIPT_DIR/platforms/linux64MingwDPInt32"
++LIB_DIR="$PLATFORM_DIR/lib"
++INC_DIR="$PLATFORM_DIR/include"
++
++echo "======================================================================"
++echo "  Cross-compiling Scotch $SCOTCH_VER for Windows x64 (MinGW)"
++echo "======================================================================"
++echo "  Source : $SCOTCH_DIR"
++echo "  Target : $PLATFORM_DIR"
++echo "======================================================================"
++
++mkdir -p "$LIB_DIR"
++mkdir -p "$INC_DIR"
++
++cd "$SCOTCH_DIR/src"
++
++# 1. Prepare Makefile.inc for MinGW
++cat << 'EOF_MAKE' > Makefile.inc
++EXE         = .exe
++LIB         = .dll
++OBJ         = .o
++
++MAKE        = make
++AR          = x86_64-w64-mingw32-gcc
++ARFLAGS     = -shared -Wl,--output-def,libscotch.def,--out-implib,libscotch.dll.a -o
++CAT         = cat
++CCS         = x86_64-w64-mingw32-gcc
++CCP         = x86_64-w64-mingw32-gcc
++CCD         = gcc
++CFLAGS      = -O3 -fPIC -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -Drestrict=__restrict -DCOMMON_OS_WINDOWS -DCOMMON_STUB_FORK -DIDXSIZE32 -DINTSIZE32
++CCDFLAGS    = -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -Drestrict=__restrict -DIDXSIZE32 -DINTSIZE32
++
++CLIBFLAGS   = -shared
++LDFLAGS     = -lz -lm
++CP          = cp
++FLEX        = flex
++BISON       = bison
++LEX         = flex
++YACC        = bison
++LN          = ln
++MKDIR       = mkdir -p
++MV          = mv
++RANLIB      = echo
++EOF_MAKE
++
++# 2. Patch CCD in libscotch Makefile if needed
++sed -i 's/CCD="\$(CCS)"/CCD="\$(CCD)"/g' libscotch/Makefile
++
++# 3. Clean previous builds
++make clean 2>/dev/null || true
++rm -f libscotch/*.dll libscotch/*.a libscotch/*.def libscotch/dummysizes libscotch/scotch.h libscotch/scotchf.h
++
++# 4. Compile libscotch and helpers
++echo "[+] Building Scotch source objects..."
++make -j $(nproc) libscotch
++
++# 5. Verify Windows PE DLL
++echo "[+] Verifying Windows libscotch.dll..."
++cd libscotch
++
++# 6. Copy artifacts to platforms directory
++echo "[+] Installing Scotch headers and libraries..."
++cp -f scotch.h scotchf.h "$INC_DIR/"
++cp -f libscotch.dll libscotcherr.dll libscotcherrexit.dll "$LIB_DIR/"
++[ -f libscotch.dll.a ] && cp -f libscotch.dll.a "$LIB_DIR/"
++# Also copy to .so for OpenFOAM build system compatibility
++cp -f libscotch.dll "$LIB_DIR/libscotch.so"
++cp -f libscotcherr.dll "$LIB_DIR/libscotcherr.so"
++cp -f libscotcherrexit.dll "$LIB_DIR/libscotcherrexit.so"
++
++echo "======================================================================"
++echo "  SCOTCH BUILD & INSTALL COMPLETED SUCCESSFULLY!"
++echo "======================================================================"
++ls -lh "$LIB_DIR"/libscotch*
++ls -lh "$INC_DIR"/scotch*
+diff --git a/makeZoltan_mingw.sh b/makeZoltan_mingw.sh
+new file mode 100755
+index 00000000..c5a7b854
+--- /dev/null
++++ b/makeZoltan_mingw.sh
+@@ -0,0 +1,64 @@
++#!/bin/bash
++set -e
++
++# ==============================================================================
++# Cross-Compilation Script for Zoltan 3.90 (Target: Windows x64 via MinGW)
++# ==============================================================================
++
++SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
++cd "$SCRIPT_DIR"
++
++if [ -z "$WM_PROJECT_DIR" ] || [ "$WM_COMPILER" != "Mingw" ]; then
++    echo "[+] Sourcing OpenFOAM MinGW environment..."
++    OF_DIR="$(cd "$SCRIPT_DIR/../OpenFOAM-13" 2>/dev/null && pwd)"
++    if [ ! -f "$OF_DIR/etc/bashrc" ]; then
++        OF_DIR="/home/kodama/OpenFOAM-v13/OpenFOAM-13"
++    fi
++    cd "$OF_DIR"
++    export WM_COMPILER=Mingw
++    export WM_ARCH=linux64
++    export WM_MPLIB=MSMPI
++    export WM_OSTYPE=MSwindows
++    source etc/bashrc
++    cd "$SCRIPT_DIR"
++fi
++
++ZOLTAN_VER="3.90"
++ZOLTAN_DIR="$SCRIPT_DIR/Zoltan-$ZOLTAN_VER"
++PLATFORM_DIR="$SCRIPT_DIR/platforms/linux64MingwDPInt32"
++
++echo "======================================================================"
++echo "  Cross-compiling Zoltan $ZOLTAN_VER for Windows x64 (MinGW)"
++echo "======================================================================"
++
++mkdir -p "$PLATFORM_DIR"
++cd "$ZOLTAN_DIR"
++
++rm -rf build-mingw
++mkdir -p build-mingw
++cd build-mingw
++
++echo "[+] Configuring Zoltan for MinGW..."
++../configure \
++    --host=x86_64-w64-mingw32 \
++    --prefix="$PLATFORM_DIR" \
++    --disable-mpi \
++    --disable-zoltan-cppdriver \
++    --with-ccflags="-fPIC -O3" \
++    --with-cxxflags="-fPIC -O3" \
++    CC=x86_64-w64-mingw32-gcc \
++    CXX=x86_64-w64-mingw32-g++ \
++    AR=x86_64-w64-mingw32-ar \
++    RANLIB=x86_64-w64-mingw32-ranlib
++
++echo "[+] Building Zoltan..."
++make -j $(nproc)
++
++echo "[+] Installing Zoltan..."
++cd src && make install
++
++echo "======================================================================"
++echo "  ZOLTAN BUILD & INSTALL COMPLETED SUCCESSFULLY!"
++echo "======================================================================"
++ls -lh "$PLATFORM_DIR/lib"/libzoltan*
++ls -lh "$PLATFORM_DIR/include"/zoltan*
+diff --git a/scotch_7.0.8/src/libscotch/Makefile b/scotch_7.0.8/src/libscotch/Makefile
+index 2a8cf883..49ec1b89 100644
+--- a/scotch_7.0.8/src/libscotch/Makefile
++++ b/scotch_7.0.8/src/libscotch/Makefile
+@@ -79,7 +79,7 @@ endif
+ scotch				:
+ 					$(MAKE) 					\
+ 					CC="$(CCS)"					\
+-					CCD="$(CCS)"					\
++					CCD="$(CCD)"					\
+ 					scotch.h					\
+ 					scotchf.h					\
+ 					libscotch$(LIB)					\
+@@ -3436,8 +3436,8 @@ ptscotchf.h			:	ptdummysizes$(EXE)			\
+ 					library_pt_f.h
+ 					./ptdummysizes$(EXE) -s$(SCOTCH_NAME_SUFFIX) library_pt_f.h ptscotchf.h
+ 
+-libscotch$(LIB)			:	$(LIBSCOTCHDEPS)
+-					$(AR) $(ARFLAGS) $(@) $(?)
++libscotch$(LIB)			:	$(LIBSCOTCHDEPS) library_error$(OBJ)
++					$(AR) $(ARFLAGS) $(@) $(?) -lz -lws2_32
+ 					-$(RANLIB) $(@)
+ 
+ libscotcherr$(LIB)		:	library_error$(OBJ)

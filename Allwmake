@@ -58,6 +58,22 @@ echo Start ThirdParty Allwmake
 echo ========================================
 echo
 
+if [ "$WM_COMPILER" = "Mingw" ]; then
+    echo "======================================================================"
+    echo "  MinGW Windows Cross-Compilation Mode detected"
+    echo "======================================================================"
+    if [ -f "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh" ]; then
+        "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh"
+    fi
+    if [ -f "$WM_THIRD_PARTY_DIR/makeZoltan_mingw.sh" ]; then
+        "$WM_THIRD_PARTY_DIR/makeZoltan_mingw.sh"
+    fi
+    echo "======================================================================"
+    echo "  Done ThirdParty Windows Cross-Compilation Allwmake"
+    echo "======================================================================"
+    exit 0
+fi
+
 #------------------------------------------------------------------------------
 
 echo ========================================
@@ -200,6 +216,15 @@ checkSystemLibrary()
 #------------------------------------------------------------------------------
 
 # Scotch
+
+if [ "$WM_COMPILER" = "Mingw" ]; then
+    echo "========================================"
+    echo "MinGW Cross-compilation for Scotch"
+    echo "========================================"
+    if [ -f "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh" ]; then
+        "$WM_THIRD_PARTY_DIR/makeScotch_mingw.sh"
+    fi
+fi
 
 # Scotch Makefile. Currently this is GCC specific.
 scotchMakefile=../../etc/wmakeFiles/scotch/Makefile.inc.i686_pc_linux2.shlib-OpenFOAM

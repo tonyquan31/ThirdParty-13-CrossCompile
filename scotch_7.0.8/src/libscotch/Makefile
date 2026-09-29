@@ -79,7 +79,7 @@ endif
 scotch				:
 					$(MAKE) 					\
 					CC="$(CCS)"					\
-					CCD="$(CCS)"					\
+					CCD="$(CCD)"					\
 					scotch.h					\
 					scotchf.h					\
 					libscotch$(LIB)					\
@@ -3436,8 +3436,8 @@ ptscotchf.h			:	ptdummysizes$(EXE)			\
 					library_pt_f.h
 					./ptdummysizes$(EXE) -s$(SCOTCH_NAME_SUFFIX) library_pt_f.h ptscotchf.h
 
-libscotch$(LIB)			:	$(LIBSCOTCHDEPS)
-					$(AR) $(ARFLAGS) $(@) $(?)
+libscotch$(LIB)			:	$(LIBSCOTCHDEPS) library_error$(OBJ)
+					$(AR) $(ARFLAGS) $(@) $(?) -lz -lws2_32
 					-$(RANLIB) $(@)
 
 libscotcherr$(LIB)		:	library_error$(OBJ)

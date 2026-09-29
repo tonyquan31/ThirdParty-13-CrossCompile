@@ -1,0 +1,25 @@
+EXE         =
+LIB         = .dll
+OBJ         = .o
+
+MAKE        = make
+AR          = x86_64-w64-mingw32-gcc
+ARFLAGS     = -shared -Wl,--output-def,libscotch.def,--out-implib,libscotch.dll.a -o
+CAT         = cat
+CCS         = x86_64-w64-mingw32-gcc
+CCP         = x86_64-w64-mingw32-gcc
+CCD         = gcc
+CFLAGS      = -O3 -fPIC -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -Drestrict=__restrict -DCOMMON_OS_WINDOWS -DCOMMON_STUB_FORK -DIDXSIZE32 -DINTSIZE32
+CCDFLAGS    = -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -Drestrict=__restrict -DIDXSIZE32 -DINTSIZE32
+
+CLIBFLAGS   = -shared
+LDFLAGS     = -lz -lm
+CP          = cp
+FLEX        = flex
+BISON       = bison
+LEX         = flex
+YACC        = bison
+LN          = ln
+MKDIR       = mkdir -p
+MV          = mv
+RANLIB      = echo
