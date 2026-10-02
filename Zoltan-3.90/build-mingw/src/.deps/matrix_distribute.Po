@@ -1,0 +1,220 @@
+matrix_distribute.o: ../../src/matrix/matrix_distribute.c \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/math.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/crtdefs.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_mac.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_secapi.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/vadefs.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_directx.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_ddk.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_const.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stdio.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_off_t.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/swprintf.inl \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdio_s.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stdlib.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt_wstdlib.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/limits.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/syslimits.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/limits.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdlib_s.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/malloc.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/string.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/string_s.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/strings.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/Utilities/shared/zoltan_util.h \
+ ../src/include/Zoltan_config.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_config.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_implementation.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/_MPI_UTILITY.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_prototypes.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_profile.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_types.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stddef.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stddef.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stdint.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stdint.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_align.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_comm.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_mem.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_dd.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_eval.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/lb/lb_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_dd.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/params/params_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/order/order_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_id_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/Utilities/shared/zoltan_id.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_types.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/par/par_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/tpls/third_library_const.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sys/types.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/float.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/float.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_timer.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_util_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_hash.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_comm.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_rand.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_const.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_util.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stdarg.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stdarg.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_stdarg.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_comm.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_hypergraph.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_tree.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_heap.h \
+ ../../src/matrix/zoltan_matrix.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_comm.h
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/math.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/crtdefs.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_mac.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_secapi.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/vadefs.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_directx.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_ddk.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_const.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stdio.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_off_t.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/swprintf.inl:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdio_s.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stdlib.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt_wstdlib.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/limits.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/syslimits.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/limits.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdlib_s.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/malloc.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/string.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/string_s.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/strings.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/Utilities/shared/zoltan_util.h:
+
+../src/include/Zoltan_config.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_config.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_implementation.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/_MPI_UTILITY.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_prototypes.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_profile.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_types.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stddef.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stddef.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stdint.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stdint.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_align.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_comm.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_mem.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_dd.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_eval.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/lb/lb_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_dd.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/params/params_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/order/order_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_id_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/Utilities/shared/zoltan_id.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_types.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/par/par_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/tpls/third_library_const.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sys/types.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/float.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/float.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_timer.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_util_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_hash.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_comm.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_rand.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_const.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_util.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stdarg.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stdarg.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_stdarg.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_comm.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_hypergraph.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_tree.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/zz/zz_heap.h:
+
+../../src/matrix/zoltan_matrix.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/phg/phg_comm.h:

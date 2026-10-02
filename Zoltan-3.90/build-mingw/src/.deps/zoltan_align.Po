@@ -1,0 +1,39 @@
+zoltan_align.o: ../../src/Utilities/shared/zoltan_align.c \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stddef.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stddef.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/crtdefs.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_mac.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_secapi.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/vadefs.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_directx.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_ddk.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_align.h \
+ ../../src/Utilities/shared/zoltan_util.h ../src/include/Zoltan_config.h
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include/stddef.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stddef.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/crtdefs.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_mac.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_secapi.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/vadefs.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_directx.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_ddk.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_align.h:
+
+../../src/Utilities/shared/zoltan_util.h:
+
+../src/include/Zoltan_config.h:

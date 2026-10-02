@@ -1,0 +1,109 @@
+timer.o: ../../src/Utilities/Timer/timer.c \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stdlib.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_mac.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_secapi.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/vadefs.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_directx.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_ddk.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt_wstdlib.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/limits.h \
+ /usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/syslimits.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/limits.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/crtdefs.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdlib_s.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/malloc.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/stdio.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_off_t.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/swprintf.inl \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdio_s.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/string.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/string_s.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_config.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_implementation.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/_MPI_UTILITY.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_prototypes.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_profile.h \
+ ../../src/Utilities/Timer/timer.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_timer.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/time.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/_timeval.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sys/timeb.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/sys/timeb_s.h \
+ /usr/x86_64-w64-mingw32/sys-root/mingw/include/pthread_time.h \
+ /home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/Utilities/shared/zoltan_util.h \
+ ../src/include/Zoltan_config.h
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stdlib.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_mac.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_secapi.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/vadefs.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_directx.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sdks/_mingw_ddk.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/corecrt_wstdlib.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/limits.h:
+
+/usr/lib64/gcc/x86_64-w64-mingw32/9.2.0/include-fixed/syslimits.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/limits.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/crtdefs.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdlib_s.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/malloc.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/stdio.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_mingw_off_t.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/swprintf.inl:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/stdio_s.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/string.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/string_s.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_config.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_implementation.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/_MPI_UTILITY.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_prototypes.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../siMPI/pyMPI/siMPI/mpi_profile.h:
+
+../../src/Utilities/Timer/timer.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/include/zoltan_timer.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/time.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/_timeval.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sys/timeb.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/sec_api/sys/timeb_s.h:
+
+/usr/x86_64-w64-mingw32/sys-root/mingw/include/pthread_time.h:
+
+/home/kodama/OpenFOAM-Foundation/ThirdParty-13/Zoltan-3.90/build-mingw/../src/Utilities/shared/zoltan_util.h:
+
+../src/include/Zoltan_config.h:
